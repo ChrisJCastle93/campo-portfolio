@@ -44,5 +44,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: ["@tailwindcss/aspect-ratio"],
 };

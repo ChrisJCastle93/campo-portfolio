@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "title": "Endy Work From Bed Campaign",
+        "subtitle": "ENDY OUT-OF-HOME + PRINT CAMPAIGN",
+        "imageSrc": "src/assets/images/projects/endy/toronto-life-magazine.png",
+        "description": "In Q4 of 2020, Canadians were well-accustomed to working from home, and Endy’s sales were soaring as those who were able to WFH updated their space.\n\r\nTo ensure Endy stayed top-of-mind for Torontonians, we took over a huge double billboard, as well as several rotating digital billboards, on the Gardiner Expressway—the busiest road in the Greater Toronto Area, with over 400,000 people driving on it per day—and lined the streets of the city with transit shelter ads to reinforce that working from bed on Canada’s Best Mattress was the best way to make 2020 a little more comfortable.\n\r\nWe then took out several print ads in Toronto Life Magazine, which has a readership of over 973,000 people nationwide, that spoke to Endy’s easy ordering process, award-winning products, and Canadian roots.",
+        "content": [
+            {
+                "imageSrc": "src/assets/images/projects/endy/endy-double-billboard.jpeg",
+                "caption": "The double billboard viewed from the Gardiner Expressway",
+                "type": "image"
+            },
+            {
+                "imageSrc": "src/assets/images/projects/endy/double-billboard-street.png",
+                "caption": "The double billboard viewed from the street",
+                "type": "image"
+            },
+            {
+                "imageSrc": "src/assets/images/projects/endy/transit-shelter-ad.jpeg",
+                "caption": "A transit shelter ad in Toronto",
+                "type": "image"
+            },
+            {
+                "imageSrc": "src/assets/images/projects/endy/digital-billboard-1.jpeg",
+                "caption": "A series of digital billboards reinforced the campaign along the Gardiner Expressway",
+                "type": "image"
+            },
+            {
+                "imageSrc": "src/assets/images/projects/endy/digital-billboard-2.jpeg",
+                "caption": "A series of digital billboards reinforced the campaign along the Gardiner Expressway",
+                "type": "image"
+            },
+            {
+                "imageSrc": "src/assets/images/projects/endy/digital-billboard-3.jpeg",
+                "caption": "A series of digital billboards reinforced the campaign along the Gardiner Expressway",
+                "type": "image"
+            },
+            {
+                "imageSrc": "src/assets/images/projects/endy/toronto-life-magazine.png",
+                "caption": "Inside front cover and inside back cover of Toronto Life Magazine",
+                "type": "image"
+            },
+            {
+                "imageSrc": "src/assets/images/projects/endy/toronto-life-magazine-2.png",
+                "caption": "Double-page spread in Toronto Life Magazine",
+                "type": "image"
+            }
+        ]
+    }
+]

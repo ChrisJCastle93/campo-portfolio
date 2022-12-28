@@ -1,5 +1,6 @@
 <script>
 import ProjectModal from "../components/ProjectModal.vue";
+import json from "../utils/projects.json";
 
 export default {
   name: "HomeView",
@@ -12,8 +13,13 @@ export default {
       email: "",
       phoneNumber: "",
       company: "",
-      projectDetails: "",
+      projects: json,
     };
+  },
+  computed: {
+    project() {
+      return this.projects[0];
+    },
   },
   methods: {
     sendContactForm(e) {
@@ -21,12 +27,15 @@ export default {
       alert("form submitted, chris needs to make this send an email :) ");
     },
   },
+  mounted() {
+    console.log(this.projects);
+  },
 };
 </script>
 
 <template>
   <div>
-    <ProjectModal />
+    <ProjectModal :project="project" />
     <section
       id="home"
       class="relative z-10 pt-[50px] lg:pt-[100px] 2xl:flex items-center 2xl:h-[700px]"

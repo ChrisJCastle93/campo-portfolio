@@ -21,10 +21,10 @@
                 <div
                   class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl"
                 >
-                  <div class="px-4 sm:px-6">
+                  <div class="px-8 sm:px-12">
                     <div class="flex items-start justify-between">
-                      <DialogTitle class="text-lg font-medium text-gray-900"
-                        >Panel title
+                      <DialogTitle class="font-bold text-black text-2xl py-4"
+                        >{{ project.title }}
                       </DialogTitle>
                       <div class="ml-3 flex h-7 items-center">
                         <button
@@ -38,15 +38,40 @@
                       </div>
                     </div>
                   </div>
-                  <div class="relative mt-6 flex-1 px-4 sm:px-6">
-                    <!-- Replace with your content -->
-                    <div class="absolute inset-0 px-4 sm:px-6">
-                      <div
-                        class="h-full border-2 border-dashed border-gray-200"
-                        aria-hidden="true"
-                      />
-                    </div>
-                    <!-- /End replace -->
+                  <div class="relative flex-1 px-8 sm:px-12">
+                    <p class="font-semibold text-sm text-primary block py-4">
+                      {{ project.subtitle }}
+                    </p>
+                    <p
+                      class="font-base text-body-color leading-relaxed text-xs md:text-sm py-4 whitespace-pre-line"
+                    >
+                      {{ project.description }}
+                    </p>
+                    <ul
+                      role="list"
+                      class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-2 xl:gap-x-8"
+                    >
+                      <li
+                        v-for="content in project.content"
+                        :key="content.imageSrc"
+                        class="relative"
+                      >
+                        <div
+                          class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100"
+                        >
+                          <img
+                            :src="content.imageSrc"
+                            alt=""
+                            class="pointer-events-none object-cover group-hover:opacity-75"
+                          />
+                        </div>
+                        <p
+                          class="font-light text-body-color leading-relaxed text-sm py-4"
+                        >
+                          {{ content.caption }}
+                        </p>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </DialogPanel>
@@ -67,10 +92,12 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 import { XMarkIcon } from "@heroicons/vue/24/outline";
+import "../utils/projects.json";
 
 export default {
   name: "ProjectModal",
   components: {
+    // eslint-disable-next-line vue/no-reserved-component-names
     Dialog,
     DialogPanel,
     DialogTitle,
@@ -78,10 +105,19 @@ export default {
     TransitionRoot,
     XMarkIcon,
   },
+  props: {
+    project: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       open: true,
     };
+  },
+  mounted() {
+    console.log(this.project);
   },
 };
 </script>
