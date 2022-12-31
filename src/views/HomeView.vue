@@ -1,11 +1,13 @@
 <script>
-import ProjectModal from "../components/ProjectModal.vue";
+import { defineAsyncComponent } from "vue";
 import json from "../utils/projects.json";
 
 export default {
   name: "HomeView",
   components: {
-    ProjectModal,
+    ProjectModal: defineAsyncComponent(() =>
+      import("../components/ProjectModal.vue")
+    ),
   },
   data() {
     return {
@@ -13,22 +15,21 @@ export default {
       email: "",
       phoneNumber: "",
       company: "",
+      projectDetails: "",
       projects: json,
+      project: null,
     };
-  },
-  computed: {
-    project() {
-      return this.projects[0];
-    },
   },
   methods: {
     sendContactForm(e) {
       e.preventDefault();
       alert("form submitted, chris needs to make this send an email :) ");
     },
-  },
-  mounted() {
-    console.log(this.projects);
+    populateProjectModal(projectId) {
+      this.project = this.projects.filter(
+        (project) => project.id === projectId
+      )[0];
+    },
   },
 };
 </script>
@@ -85,7 +86,7 @@ export default {
               class="relative lg:mt-12 lg:mt-0 z-10 2xl:absolute 2xl:bottom-0 2xl:right-40"
             >
               <img
-                src="../assets/images/hero/hero-image.png"
+                src="../assets/images/hero/hero-image.webp"
                 alt="image"
                 class="max-w-full mx-auto"
               />
@@ -263,9 +264,10 @@ export default {
                   class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:text-primary"
                 >
                   <img
-                    src="../assets/images/services/copywriting.png"
+                    src="../assets/images/services/copywriting.webp"
                     alt="SEO"
                     width="35"
+                    height="35"
                   />
                 </div>
                 <h3
@@ -408,9 +410,10 @@ export default {
                   class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:text-primary"
                 >
                   <img
-                    src="../assets/images/services/blog.png"
+                    src="../assets/images/services/blog.webp"
                     alt="blog"
                     width="35"
+                    height="35"
                   />
                 </div>
                 <h3
@@ -553,9 +556,10 @@ export default {
                   class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:text-primary"
                 >
                   <img
-                    src="../assets/images/services/strategy.png"
+                    src="../assets/images/services/strategy.webp"
                     alt="strategy"
                     width="35"
+                    height="35"
                   />
                 </div>
                 <h3
@@ -698,9 +702,10 @@ export default {
                   class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:text-primary"
                 >
                   <img
-                    src="../assets/images/services/seo.png"
+                    src="../assets/images/services/seo.webp"
                     alt="SEO"
                     width="35"
+                    height="35"
                   />
                 </div>
                 <h3
@@ -870,7 +875,7 @@ export default {
                 rel="nofollow noreferrer"
                 class="flex items-center justify-center max-w-[120px] lg:max-w-[130px] xl:max-w-[150px] 2xl:max-w-[160px] mx-3 sm:mx-4 xl:mx-6 2xl:mx-8 py-[15px] grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition"
               >
-                <img src="../assets/images/brands/ultimate.png" alt="uideck" />
+                <img src="../assets/images/brands/ultimate.webp" alt="uideck" />
               </a>
               <a
                 href="https://intrepidtravel.com"
@@ -879,7 +884,7 @@ export default {
                 class="flex items-center justify-center max-w-[120px] lg:max-w-[130px] xl:max-w-[150px] 2xl:max-w-[160px] mx-3 sm:mx-4 xl:mx-6 2xl:mx-8 py-[15px] grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition"
               >
                 <img
-                  src="../assets/images/brands/intrepid.png"
+                  src="../assets/images/brands/intrepid.webp"
                   alt="tailgrids"
                 />
               </a>
@@ -889,7 +894,7 @@ export default {
                 rel="nofollow noreferrer"
                 class="flex items-center justify-center max-w-[120px] lg:max-w-[130px] xl:max-w-[150px] 2xl:max-w-[160px] mx-3 sm:mx-4 xl:mx-6 2xl:mx-8 py-[15px] grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition"
               >
-                <img src="../assets/images/brands/honda.png" alt="lineicons" />
+                <img src="../assets/images/brands/honda.webp" alt="lineicons" />
               </a>
               <a
                 href="https://endy.ca"
@@ -897,7 +902,7 @@ export default {
                 rel="nofollow noreferrer"
                 class="flex items-center justify-center max-w-[120px] lg:max-w-[130px] xl:max-w-[150px] 2xl:max-w-[160px] mx-3 sm:mx-4 xl:mx-6 2xl:mx-8 py-[15px] grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition"
               >
-                <img src="../assets/images/brands/endy.png" alt="ayroui" />
+                <img src="../assets/images/brands/endy.webp" alt="ayroui" />
               </a>
               <a
                 href="https://telus.ca"
@@ -905,7 +910,10 @@ export default {
                 rel="nofollow noreferrer"
                 class="flex items-center justify-center max-w-[120px] lg:max-w-[130px] xl:max-w-[150px] 2xl:max-w-[160px] mx-3 sm:mx-4 xl:mx-6 2xl:mx-8 py-[15px] grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition"
               >
-                <img src="../assets/images/brands/telus.png" alt="plainadmin" />
+                <img
+                  src="../assets/images/brands/telus.webp"
+                  alt="plainadmin"
+                />
               </a>
             </div>
           </div>
@@ -914,187 +922,35 @@ export default {
         <div class="portfolio-container flex justify-center -mx-4">
           <div class="w-full xl:w-10/12 px-4">
             <div class="items-wrapper flex flex-wrap justify-center mx-[-16px]">
-              <div class="w-full md:w-1/2 px-4 item web app">
+              <div
+                v-for="project in projects"
+                :key="project.id"
+                @click="populateProjectModal(project.id)"
+                class="w-full md:w-1/4 px-4 item web app"
+              >
                 <div class="mb-12">
                   <div
-                    class="relative group mb-8 overflow-hidden shadow-service rounded-md"
+                    class="relative group mb-8 h-48 overflow-hidden shadow-service rounded-lg"
                   >
                     <img
-                      src="../assets/images/portfolio/portfolio-01.jpg"
+                      :src="project.src"
                       alt="image"
-                      class="w-full"
+                      class="w-full cover object-cover h-full transition duration-300 ease-in-out transform group-hover:scale-105"
                     />
                     <div
                       class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
-                    >
-                      <a
-                        href="images/portfolio/portfolio-01.jpg"
-                        class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full"
-                      >
-                        <svg
-                          width="14"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"
-                            fill="white"
-                          />
-                        </svg>
-                      </a>
-                    </div>
+                    ></div>
                   </div>
                   <h3 class="mt-6">
                     <a
                       href="portfolio-details.html"
                       class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"
                     >
-                      Startup landing page
+                      {{ project.title }}
                     </a>
                   </h3>
                   <p class="font-medium text-base text-body-color">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas vitae dolor ultrices libero.
-                  </p>
-                </div>
-              </div>
-              <div class="w-full md:w-1/2 px-4 item graphics web">
-                <div class="mb-12">
-                  <div
-                    class="relative group mb-8 overflow-hidden shadow-service rounded-md"
-                  >
-                    <img
-                      src="../assets/images/portfolio/portfolio-02.jpg"
-                      alt="image"
-                      class="w-full"
-                    />
-                    <div
-                      class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
-                    >
-                      <a
-                        href="images/portfolio/portfolio-02.jpg"
-                        class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full"
-                      >
-                        <svg
-                          width="14"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"
-                            fill="white"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <h3 class="mt-6">
-                    <a
-                      href="portfolio-details.html"
-                      class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"
-                    >
-                      Job portal landing page
-                    </a>
-                  </h3>
-                  <p class="font-medium text-base text-body-color">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas vitae dolor ultrices libero.
-                  </p>
-                </div>
-              </div>
-              <div class="w-full md:w-1/2 px-4 item app">
-                <div class="mb-12">
-                  <div
-                    class="relative group mb-8 overflow-hidden shadow-service rounded-md"
-                  >
-                    <img
-                      src="../assets/images/portfolio/portfolio-03.jpg"
-                      alt="image"
-                      class="w-full"
-                    />
-                    <div
-                      class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
-                    >
-                      <a
-                        href="images/portfolio/portfolio-03.jpg"
-                        class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full"
-                      >
-                        <svg
-                          width="14"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"
-                            fill="white"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <h3 class="mt-6">
-                    <a
-                      href="portfolio-details.html"
-                      class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"
-                    >
-                      SaaS landing page
-                    </a>
-                  </h3>
-                  <p class="font-medium text-base text-body-color">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas vitae dolor ultrices libero.
-                  </p>
-                </div>
-              </div>
-              <div class="w-full md:w-1/2 px-4 item graphics web">
-                <div class="mb-12">
-                  <div
-                    class="relative group mb-8 overflow-hidden shadow-service rounded-md"
-                  >
-                    <img
-                      src="../assets/images/portfolio/portfolio-04.jpg"
-                      alt="image"
-                      class="w-full"
-                    />
-                    <div
-                      class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
-                    >
-                      <a
-                        href="images/portfolio/portfolio-04.jpg"
-                        class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full"
-                      >
-                        <svg
-                          width="14"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"
-                            fill="white"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <h3 class="mt-6">
-                    <a
-                      href="portfolio-details.html"
-                      class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"
-                    >
-                      Business & corporate template
-                    </a>
-                  </h3>
-                  <p class="font-medium text-base text-body-color">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas vitae dolor ultrices libero.
+                    {{ project.subtitle }}
                   </p>
                 </div>
               </div>
@@ -1132,7 +988,7 @@ export default {
             >
               <div class="mb-5">
                 <img
-                  src="../assets/images/testimonial/causeforce.png"
+                  src="../assets/images/testimonial/causeforce.webp"
                   alt="lineicons"
                   class="h-12"
                 />
@@ -1148,9 +1004,11 @@ export default {
                   class="max-w-[60px] w-full h-[60px] rounded-full overflow-hidden mr-3"
                 >
                   <img
-                    src="../assets/images/testimonial/joni.jpeg"
+                    src="../assets/images/testimonial/joni.webp"
                     alt="image"
                     class="w-full"
+                    height="60"
+                    width="60"
                   />
                 </div>
                 <div>
@@ -1190,9 +1048,10 @@ export default {
             >
               <div class="mb-5">
                 <img
-                  src="../assets/images/testimonial/intrepid.png"
+                  src="../assets/images/testimonial/intrepid.webp"
                   alt="tailgrids"
                   class="h-16"
+                  height="60"
                 />
               </div>
               <p class="font-medium text-lg text-body-color mb-8">
@@ -1209,9 +1068,11 @@ export default {
                   class="max-w-[60px] w-full h-[60px] rounded-full overflow-hidden mr-3"
                 >
                   <img
-                    src="../assets/images/testimonial/bex.jpeg"
+                    src="../assets/images/testimonial/bex.webp"
                     alt="image"
                     class="w-full"
+                    height="60"
+                    width="60"
                   />
                 </div>
                 <div>
@@ -1251,7 +1112,7 @@ export default {
             >
               <div class="mb-5">
                 <img
-                  src="../assets/images/testimonial/gal.png"
+                  src="../assets/images/testimonial/gal.webp"
                   alt="ayroui"
                   class="h-7"
                 />
@@ -1266,8 +1127,10 @@ export default {
                   class="max-w-[60px] w-full h-[60px] rounded-full overflow-hidden mr-3"
                 >
                   <img
-                    src="../assets/images/testimonial/paige.png"
+                    src="../assets/images/testimonial/paige.webp"
                     alt="image"
+                    height="60"
+                    width="60"
                     class="w-full"
                   />
                 </div>
@@ -1335,7 +1198,7 @@ export default {
                 class="block"
               >
                 <img
-                  src="../assets/images/news/cruise.jpeg"
+                  src="../assets/images/news/cruise.webp"
                   alt="image"
                   class="object-cover w-full h-[200px]"
                 />
@@ -1370,7 +1233,7 @@ export default {
                 class="block"
               >
                 <img
-                  src="../assets/images/news/maasai.jpeg"
+                  src="../assets/images/news/maasai.webp"
                   alt="image"
                   class="object-cover w-full h-[200px]"
                 />
@@ -1406,7 +1269,7 @@ export default {
                 class="block"
               >
                 <img
-                  src="../assets/images/news/sorority.jpeg"
+                  src="../assets/images/news/sorority.webp"
                   alt="image"
                   class="object-cover w-full h-[200px]"
                 />

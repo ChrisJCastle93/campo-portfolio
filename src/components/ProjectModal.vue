@@ -43,24 +43,36 @@
                       {{ project.subtitle }}
                     </p>
                     <p
-                      class="font-base text-body-color leading-relaxed text-xs md:text-sm py-4 whitespace-pre-line"
+                      class="font-base text-body-color leading-relaxed text-xs md:text-sm pt-4 pb-8 whitespace-pre-line"
                     >
                       {{ project.description }}
                     </p>
                     <ul
                       role="list"
-                      class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-2 xl:gap-x-8"
+                      class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-1 sm:gap-x-6 lg:grid-cols-1 xl:gap-x-8"
                     >
                       <li
                         v-for="content in project.content"
-                        :key="content.imageSrc"
+                        :key="content.src"
                         class="relative"
                       >
                         <div
                           class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100"
                         >
+                          <div
+                            class="aspect-w-16 aspect-h-9"
+                            v-if="content.type === 'video'"
+                          >
+                            <iframe
+                              :src="content.src"
+                              frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                            ></iframe>
+                          </div>
                           <img
-                            :src="content.imageSrc"
+                            v-if="content.type === 'image'"
+                            :src="content.src"
                             alt=""
                             class="pointer-events-none object-cover group-hover:opacity-75"
                           />
@@ -105,19 +117,16 @@ export default {
     TransitionRoot,
     XMarkIcon,
   },
-  props: {
-    project: {
-      type: Object,
-      required: true,
-    },
-  },
+  props: ["project"],
   data() {
     return {
-      open: true,
+      open: false,
     };
   },
-  mounted() {
-    console.log(this.project);
+  watch: {
+    project() {
+      if (this.project) this.open = true;
+    },
   },
 };
 </script>
