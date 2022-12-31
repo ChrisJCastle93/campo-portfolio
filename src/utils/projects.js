@@ -1,0 +1,260 @@
+export const projects = [
+  {
+    id: 1,
+    title: "Endy Work From Bed Campaign",
+    subtitle: "ENDY OUT-OF-HOME + PRINT CAMPAIGN",
+    src: "endy/toronto-life-magazine.webp",
+    description:
+      "In Q4 of 2020, Canadians were well-accustomed to working from home, and Endy’s sales were soaring as those who were able to WFH updated their space.\n\r\nTo ensure Endy stayed top-of-mind for Torontonians, we took over a huge double billboard, as well as several rotating digital billboards, on the Gardiner Expressway—the busiest road in the Greater Toronto Area, with over 400,000 people driving on it per day—and lined the streets of the city with transit shelter ads to reinforce that working from bed on Canada’s Best Mattress was the best way to make 2020 a little more comfortable.\n\r\nWe then took out several print ads in Toronto Life Magazine, which has a readership of over 973,000 people nationwide, that spoke to Endy’s easy ordering process, award-winning products, and Canadian roots.",
+    content: [
+      {
+        src: "endy/endy-double-billboard.webp",
+        caption: "The double billboard viewed from the Gardiner Expressway",
+        type: "image",
+      },
+      {
+        src: "endy/double-billboard-street.webp",
+        caption: "The double billboard viewed from the street",
+        type: "image",
+      },
+      {
+        src: "endy/transit-shelter-ad.webp",
+        caption: "A transit shelter ad in Toronto",
+        type: "image",
+      },
+      {
+        src: "endy/digital-billboard-1.webp",
+        caption:
+          "A series of digital billboards reinforced the campaign along the Gardiner Expressway",
+        type: "image",
+      },
+      {
+        src: "endy/digital-billboard-2.webp",
+        caption:
+          "A series of digital billboards reinforced the campaign along the Gardiner Expressway",
+        type: "image",
+      },
+      {
+        src: "endy/digital-billboard-3.webp",
+        caption:
+          "A series of digital billboards reinforced the campaign along the Gardiner Expressway",
+        type: "image",
+      },
+      {
+        src: "endy/toronto-life-magazine.webp",
+        caption:
+          "Inside front cover and inside back cover of Toronto Life Magazine",
+        type: "image",
+      },
+      {
+        src: "endy/toronto-life-magazine-2.webp",
+        caption: "Double-page spread in Toronto Life Magazine",
+        type: "image",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Small travelers, Big adventures.",
+    subtitle: "INTREPID TRAVEL FAMILY TRIPS CAMPAIGN",
+    src: "intrepid-family/facebook-ad-carousel.webp",
+    description:
+      "On all its tours, Intrepid Travel promises small groups and big adventures. To introduce the North American market to Intrepid Family trips, the Small Travelers, Big Adventures campaign featured interviews from real kids who’ve been on Intrepid trips. The interviews, interspersed with animated vignettes, illustrate how travel changes the way children see the world and that having a family doesn’t have to mean compromising on adventure. The results? 188% increase in family passengers and 158% increase in family trips revenue.",
+    content: [
+      {
+        src: "https://www.youtube.com/embed/6uav91S7hZw",
+        caption: "Campaign hero video",
+        type: "video",
+      },
+      {
+        src: "https://www.youtube.com/embed/EOjb6ctwTzw",
+        caption: "30 second video - Will & Charlie’s Adventure in Africa",
+        type: "video",
+      },
+      {
+        src: "intrepid-family/display-ad.webp",
+        caption: "Display Ad",
+        type: "image",
+      },
+      {
+        src: "intrepid-family/facebook-ad-hero.webp",
+        caption: "Facebook ad - Hero video (top funnel)",
+        type: "image",
+      },
+      {
+        src: "intrepid-family/facebook-ad-carousel.webp",
+        caption: "Facebook carousel ad - Family trips (bottom funnel)",
+        type: "image",
+      },
+      {
+        src: "intrepid-family/bannera.webp",
+        caption: "Banner Ad",
+        type: "image",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Trip experience videos",
+    subtitle: "ORGANIC FACEBOOK CAMPAIGN",
+    src: "intrepid-trip-experience/hero.webp",
+    description:
+      "The trip experience videos were created to showcase an incredible or unique experience. They are highly visual and highly shareable videos with succinct copy that highlight not only why you should take that trip, but why you should take the trip with Intrepid Travel. The 14 videos published on Facebook garnered over 3 million views and thousands of engagements.",
+    content: [
+      {
+        src: "https://www.youtube.com/embed/FF0jM4yoRUQ",
+        caption: "",
+        type: "video",
+      },
+      {
+        src: "https://www.youtube.com/embed/qJcTR9BxAwg",
+        caption: "",
+        type: "video",
+      },
+      {
+        src: "https://www.youtube.com/embed/TcTqyo7QnVs",
+        caption: "",
+        type: "video",
+      },
+      {
+        src: "https://www.youtube.com/embed/jAKSnDgIHUA",
+        caption: "",
+        type: "video",
+      },
+      {
+        src: "https://www.youtube.com/embed/SAsVqivdezE",
+        caption: "",
+        type: "video",
+      },
+      {
+        src: "https://www.youtube.com/embed/UTJxCuf8Hw0",
+        caption: "",
+        type: "video",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "A Better Way to Travel ",
+    subtitle: "DIGITAL CAMPAIGN",
+    src: "better-way/hero.webp",
+    description:
+      "The average North American probably knows what an adventure tour is, but doesn’t necessarily know the difference between Intrepid Travel and our competitors. To change that, we launched a digital campaign that would educate potential travelers on why going with Intrepid is the better way to travel. The ads, featuring our local leaders, highlight how all our trips are sustainable, support local economies and care about the people and places we visit.",
+    content: [
+      {
+        src: "better-way/1.webp",
+        caption:
+          "TOP FUNNEL INSTAGRAM AD FEATURING MEXICO AND LOCAL LEADER, VALENTINA",
+        type: "image",
+      },
+      {
+        src: "better-way/2.webp",
+        caption:
+          "MID TO BOTTOM-FUNNEL INSTAGRAM AD FEATURING 'TOP REASONS TO TRAVEL WITH A LOCAL LEADER'",
+        type: "image",
+      },
+      {
+        src: "better-way/3.webp",
+        caption: "ORGANIC INSTAGRAM POST TIE-IN",
+        type: "image",
+      },
+      {
+        src: "better-way/4.webp",
+        caption: "LANDING PAGE FEATURING MORE LOCAL LEADERS",
+        type: "image",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Intrepid Travel x High Park Brewery B Corp Beer",
+    subtitle: "BRANDING & NAMING PROJECT",
+    src: "high-park/hero.webp",
+    description:
+      "What’s in a name? Well, quite a bit actually. When Intrepid Travel and High Park Brewery, both Toronto-based B Corps decided to partner to create a limited edition beer for B Corp month, I was tasked with giving it a name. The name had to connote that each beer would plant trees to help fight climate change and, as certified B Corps, that we were changing the way businesses operate and using business as a force for good in the world. The end result? The Seeds of Change Ale which plants two trees for every beer purchased.",
+    content: [
+      {
+        src: "high-park/1.webp",
+        caption: "Label Mock-up",
+        type: "image",
+      },
+      {
+        src: "high-park/2.webp",
+        caption: "The Final Product",
+        type: "image",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "The Telus TimePlay Emoji Challenge",
+    subtitle: "AGENCY: THE&PARTNERSHIP",
+    src: "telus/hero.webp",
+    description:
+      "How do you get moviegoers to engage with and learn about the Telus Learning Centre? Offer them the chance to win a free smartphone, of course!\n\nTelus partnered with Cineplex to create a branded TimePlay to engage with audience members. In the game, we put their emoji skills to the test. Top scorers won a Samsung Galaxy and Scene Points, and those who didn’t do so well were invited to come into a Telus Learning Centre to brush up on emojis and to get any other tech questions answered.\n\nSince the launch of the Telus-branded TimePlay, ratings and downloads for the TimePlay app have soared.",
+    content: [
+      {
+        src: "telus/1.webp",
+        caption:
+          "A video appeared on the big screen while audience members followed along and answered on their phones.",
+        type: "image",
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "Galapagos National Park",
+    subtitle: "SPEC PRINT AD CAMPAIGN",
+    src: "galapagos/hero.webp",
+    description:
+      "The Galapagos Islands are a nature-lover’s dream. These factual but fun ads, running in National Geographic, travel magazines, and the like, will entice travellers to visit the islands to the see the bizarre and beautiful creatures for themselves.",
+    content: [
+      {
+        src: "galapagos/1.webp",
+        caption: "",
+        type: "image",
+      },
+      {
+        src: "galapagos/2.webp",
+        caption: "",
+        type: "image",
+      },
+      {
+        src: "galapagos/3.webp",
+        caption: "",
+        type: "image",
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "Cheer Laundry Detergent #LifeInColour",
+    subtitle: "SPEC DIGITAL & EXPERIENTIAL CAMPAIGN",
+    src: "cheer/hero.webp",
+    description: "",
+    content: [
+      {
+        src: "cheer/1.webp",
+        caption: "",
+        type: "image",
+      },
+      {
+        src: "cheer/2.webp",
+        caption: "CONCERT POSTER & SNAPCHAT FILTER",
+        type: "image",
+      },
+      {
+        src: "cheer/3.webp",
+        caption:
+          "SPOTIFY BRANDED PLAYLIST EXAMPLE. Playlist description reads: We believe that colour is linked to mood, so whether you need to cheer up or get pumped up, host a party or do some laundry, we have a Life in Colour playlist for you. www.lifeincolour.com.",
+        type: "image",
+      },
+      {
+        src: "cheer/4.webp",
+        caption:
+          "SPOTIFY AUDIO SPOT PLUS VIDEO TAKEOVER.\n\n Script: ANNOUNCER: Wouldn’t life without colour be dull? How could you seize golden opportunities or feel tickled pink when things go your way? And while not every day is a red-letter day, and memories may fade, colours shouldn’t. Keep your colours bright with Cheer detergent. Life’s better in colour.",
+        type: "image",
+      },
+    ],
+  },
+];

@@ -68,13 +68,15 @@
                               frameborder="0"
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                               allowfullscreen
+                              class="w-full h-auto object-cover"
                             ></iframe>
                           </div>
                           <img
+                            loading="lazy"
                             v-if="content.type === 'image'"
-                            :src="content.src"
+                            :src="imgUrl(content.src)"
                             alt=""
-                            class="pointer-events-none object-cover group-hover:opacity-75"
+                            class="pointer-events-none w-full object-cover group-hover:opacity-75"
                           />
                         </div>
                         <p
@@ -122,6 +124,11 @@ export default {
     return {
       open: false,
     };
+  },
+  methods: {
+    imgUrl(path) {
+      return new URL(`../assets/images/projects/${path}`, import.meta.url).href;
+    },
   },
   watch: {
     project() {
