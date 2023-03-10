@@ -1,14 +1,26 @@
 <script>
-import { RouterView } from "vue-router";
+import { defineAsyncComponent } from 'vue';
+import { RouterView } from 'vue-router';
+import HeaderSection from './components/HeaderSection.vue';
 
 export default {
-  name: "App",
-  components: RouterView,
+  name: 'App',
+  components: {
+    HeaderSection,
+    RouterView,
+    FooterSection: defineAsyncComponent(() => import('./components/FooterSection.vue')),
+  },
 };
 </script>
 
 <template>
-  <RouterView />
+  <section class="flex flex-col min-h-screen">
+    <HeaderSection />
+    <section class="flex-1">
+      <RouterView />
+    </section>
+    <FooterSection />
+  </section>
 </template>
 
 <style scoped>
